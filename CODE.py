@@ -8,10 +8,10 @@ def sort_books(books):
     shelves[s].append(book)
   # sort the individual shelves
   output = []
-  for val in shelves.values():
+  for key in shelves.keys():
     # sort the val
-    insertion_sort(list(val))
-    output.extend(val)
+    insertion_sort(shelves[key])
+    output.extend(shelves[key])
   return output
 
 def insertion_sort(val):
@@ -19,3 +19,4 @@ def insertion_sort(val):
     for j in range(i, 0, -1):
       if val[j][order] < val[j - 1][order]:
         val[j], val[j- 1] = val[j-1], val[j]
+
